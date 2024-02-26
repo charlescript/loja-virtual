@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^sub-categoria-de-(.*)$ sub-categorias.php?nome=$1 [L] #Sempre que dentro dos links de referência href ou <a> tiver esse trecho 'sub-categoria-de-' ele será redirecionado para sub-categorias.php
+RewriteRule ^produtos-(.*)$ lista-produtos.php?nome=$1 [L]  #Sempre que dentro dos links de referência href ou <a> tiver esse trecho 'produtos-' ele será redirecionado para lista-produtos.php
+RewriteRule ^produto-(.*)$ produto.php?nome=$1 [L]  #Sempre que dentro dos links de referência href ou <a> tiver esse trecho 'produto-' ele será redirecionado para produto.php
+RewriteRule ^combo-(.*)$ combos.php?nome=$1 [L] #Sempre que dentro dos links de referência href ou <a> tiver esse trecho 'combo-' ele será redirecionado para combos.php
+
+
+

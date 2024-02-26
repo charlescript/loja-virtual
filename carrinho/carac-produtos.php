@@ -7,103 +7,92 @@ $id_cliente = @$_SESSION['id_usuario'];
 $id_carrinho = @$_POST['id_carrinho'];
 
 
-                            $query2 = $pdo->query("SELECT * from tb_carac_prod where id_prod = '$id_produto' ");
-                                $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-                                for ($i=0; $i < count($res2); $i++) { 
-                                    foreach ($res2[$i] as $key => $value) {
-                                    }
+$query2 = $pdo->query("SELECT * FROM tb_carac_prod WHERE id_prod = '$id_produto'");
+$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+for ($i = 0; $i < count($res2); $i++) {
+    foreach ($res2[$i] as $key => $value) {
+    }
 
-                                    $id_carac = $res2[$i]['id_carac'];
-                                    $id_carac_prod = $res2[$i]['id'];
-                                    $query3 = $pdo->query("SELECT * from tb_carac where id = '$id_carac' ");
-                                $res3 = $query3->fetchAll(PDO::FETCH_ASSOC);
-                                $nome_carac = $res3[0]['nome'];
-                                if($nome_carac == 'Cor'){
-                                    @$tem_cor = 'Sim';
-                                }
-                            
-                            echo "<div class='mr-3 mt-2'>
-                                
-                                 <span>
-                                 <form id='form' method='post'>
-                                  
-                                  <input name='id_car' type='hidden' value='".$id_carrinho."' >
-                                    <select class='form-control form-control-sm' name='".$i."' id='".$i."'>";
-                                 echo "<option value='' >Selecionar " . $nome_carac . "</option>"; 
-                               
-                                $query4 = $pdo->query("SELECT * from tb_carac_itens where id_carac_prod = '$id_carac_prod'");
-                                $res4 = $query4->fetchAll(PDO::FETCH_ASSOC);
-                                for ($i2=0; $i2 < count($res4); $i2++) { 
-                                    foreach ($res4[$i2] as $key => $value) {
-                                    }
+    $id_carac = $res2[$i]['id_carac'];
+    $id_carac_prod = $res2[$i]['id'];
+    $query3 = $pdo->query("SELECT * FROM tb_carac WHERE id = '$id_carac'");
+    $res3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+    $nome_carac = $res3[0]['nome'];
+    if ($nome_carac == 'Cor') {
+        @$tem_cor = 'Sim';
+    }
 
-                                    echo "<option value='".$res4[$i2]['id']."' >" . $res4[$i2]['nome'] . "</option>"; 
+    echo "<div class='mr-3 mt-2'>
 
-                                }
+        <span>
+        <form id='form' method='post'>
 
+        <input name='id_car' type='hidden' value='" . $id_carrinho . "' >
+            <select class='form-control form-control-sm' name='" . $i . "' id='" . $i . "'>";
+    echo "<option value=''>Selecionar " . $nome_carac . "</option>";
 
-                              
-                           echo '</select></form>
-                                </span>
-                                 
-                            </div>';
+    $query4 = $pdo->query("SELECT * FROM tb_carac_itens WHERE id_carac_prod = '$id_carac_prod'");
+    $res4 = $query4->fetchAll(PDO::FETCH_ASSOC);
+    for ($i2 = 0; $i2 < count($res4); $i2++) {
+        foreach ($res4[$i2] as $key => $value) {
+        }
 
-                         } 
+        echo "<option value='" . $res4[$i2]['id'] . "'>" . $res4[$i2]['nome'] . "</option>";
 
-                         
+    }
 
-                       
+    echo '</select></form>
+        </span>
+         
+    </div>';
+}
 
+$query2 = $pdo->query("SELECT * FROM tb_carac_prod WHERE id_prod = '$id_produto'");
+$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+for ($i = 0; $i < count($res2); $i++) {
+    foreach ($res2[$i] as $key => $value) {
+    }
 
+    $id_carac = $res2[$i]['id_carac'];
+    $id_carac_prod = $res2[$i]['id'];
+    $query3 = $pdo->query("SELECT * FROM tb_carac WHERE id = '$id_carac'");
+    $res3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+    $nome_carac = $res3[0]['nome'];
+    if ($nome_carac == 'Cor') {
+        @$tem_cor = 'Sim';
+    }
 
-                      
-                            $query2 = $pdo->query("SELECT * from tb_carac_prod where id_prod = '$id_produto' ");
-                                $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-                                for ($i=0; $i < count($res2); $i++) { 
-                                            foreach ($res2[$i] as $key => $value) {
-                                            }
+    if (@$tem_cor == 'Sim') {
+        echo '<div class="mt-4">';
+        $query2 = $pdo->query("SELECT * FROM tb_carac_prod WHERE id_prod = '$id_produto'");
+        $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
+        for ($i = 0; $i < count($res2); $i++) {
+            foreach ($res2[$i] as $key => $value) {
+            }
 
-                                            $id_carac = $res2[$i]['id_carac'];
-                                            $id_carac_prod = $res2[$i]['id'];
-                                            $query3 = $pdo->query("SELECT * from tb_carac where id = '$id_carac' ");
-                                        $res3 = $query3->fetchAll(PDO::FETCH_ASSOC);
-                                        $nome_carac = $res3[0]['nome'];
-                                        if($nome_carac == 'Cor'){
-                                            @$tem_cor = 'Sim';
-                                        }
+            $id_carac = $res2[$i]['id_carac'];
+            $id_carac_prod = $res2[$i]['id'];
+            $query3 = $pdo->query("SELECT * FROM tb_carac WHERE id = '$id_carac'");
+            $res3 = $query3->fetchAll(PDO::FETCH_ASSOC);
+            $nome_carac = $res3[0]['nome'];
 
+            if ($nome_carac == 'Cor') {
 
+                $query4 = $pdo->query("SELECT * FROM tb_carac_itens WHERE id_carac_prod = '$id_carac_prod'");
+                $res4 = $query4->fetchAll(PDO::FETCH_ASSOC);
+                for ($i2 = 0; $i2 < count($res4); $i2++) {
+                    foreach ($res4[$i2] as $key => $value) {
+                    }
 
-                                    if(@$tem_cor == 'Sim'){ 
-                                        echo '<div class="mt-4">';
-                                            $query2 = $pdo->query("SELECT * from tb_carac_prod where id_prod = '$id_produto' ");
-                                            $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
-                                            for ($i=0; $i < count($res2); $i++) { 
-                                                    foreach ($res2[$i] as $key => $value) {
-                                                    }
+                    echo "<small><span class='mr-3'><i class='fa fa-circle mr-1' style='color:" . $res4[$i2]['valor_item'] . "'></i>" . $res4[$i2]['nome'] . "</span></small><br>";
 
-                                                    $id_carac = $res2[$i]['id_carac'];
-                                                    $id_carac_prod = $res2[$i]['id'];
-                                                    $query3 = $pdo->query("SELECT * from tb_carac where id = '$id_carac' ");
-                                                    $res3 = $query3->fetchAll(PDO::FETCH_ASSOC);
-                                                    $nome_carac = $res3[0]['nome'];
-
-                                                if($nome_carac == 'Cor'){
-                                                    
-                                                    $query4 = $pdo->query("SELECT * from tb_carac_itens where id_carac_prod = '$id_carac_prod'");
-                                                    $res4 = $query4->fetchAll(PDO::FETCH_ASSOC);
-                                                    for ($i2=0; $i2 < count($res4); $i2++) { 
-                                                        foreach ($res4[$i2] as $key => $value) {
-                                                        }
-
-                                                        echo "<small><span class='mr-3'><i class='fa fa-circle mr-1' style='color:".$res4[$i2]['valor_item']."'></i>" .$res4[$i2]['nome']."</span></small><br>";
-
-                                                    }
-                                                }
-                                            }
-                                    }
-                                }
+                }
+            }
+        }
+    }
+}
 ?>
+
 
 
 

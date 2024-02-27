@@ -208,7 +208,6 @@ for ($i = 0; $i < count($res2); $i++) {
                    atualizarCaracCarrinho();
                    atualizarCarrinho();
                     }
-                
             }
         })
     })

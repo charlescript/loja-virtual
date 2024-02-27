@@ -23,7 +23,6 @@ for ($i = 0; $i < count($res2); $i++) {
     }
 
     echo "<div class='mr-3 mt-2'>
-
         <span>
         <form id='form' method='post'>
 

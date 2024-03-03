@@ -110,7 +110,7 @@ for ($i = 0; $i < count($res2); $i++) {
                     
                     atualizarCaracCarrinho();
                    	atualizarCarrinho();
-                    }
+                }
                  
             }
         })
@@ -134,7 +134,7 @@ for ($i = 0; $i < count($res2); $i++) {
                     
                    atualizarCaracCarrinho();
                    atualizarCarrinho();
-                    }
+                }
             }
         })
     })
@@ -157,7 +157,7 @@ for ($i = 0; $i < count($res2); $i++) {
                     
                    atualizarCaracCarrinho();
                    atualizarCarrinho();
-                    }
+                }
                 
             }
         })
@@ -181,7 +181,7 @@ for ($i = 0; $i < count($res2); $i++) {
                     
                    atualizarCaracCarrinho();
                    atualizarCarrinho();
-                    }
+                }
                 
             }
         })
@@ -205,7 +205,7 @@ for ($i = 0; $i < count($res2); $i++) {
                     
                    atualizarCaracCarrinho();
                    atualizarCarrinho();
-                    }
+                }
             }
         })
     })
@@ -228,8 +228,53 @@ for ($i = 0; $i < count($res2); $i++) {
                     
                    atualizarCaracCarrinho();
                    atualizarCarrinho();
-                   
-                    }
+                }
+                
+            }
+        })
+    })
+
+</script>
+
+
+<script type="text/javascript">
+    $("#6").change(function () {
+    	event.preventDefault();
+        
+        $.ajax({
+            url:"carrinho/add-carac-carrinho.php",
+            method:"post",
+            data: $('form').serialize(),
+            dataType: "text",
+            success: function(msg){
+                if(msg.trim() === 'Cadastrado com Sucesso!'){
+                    
+                   atualizarCaracCarrinho();
+                   atualizarCarrinho();
+                }
+                
+            }
+        })
+    })
+
+</script>
+
+
+<script type="text/javascript">
+    $("#7").change(function () {
+    	event.preventDefault();
+        
+        $.ajax({
+            url:"carrinho/add-carac-carrinho.php",
+            method:"post",
+            data: $('form').serialize(),
+            dataType: "text",
+            success: function(msg){
+                if(msg.trim() === 'Cadastrado com Sucesso!'){
+                    
+                   atualizarCaracCarrinho();
+                   atualizarCarrinho();
+                }
                 
             }
         })

@@ -5,7 +5,7 @@ require_once("../conexao.php");
 $salvar;
 $id_carac_itens = 0;
 
-for ($i=0; $i < 6; $i++) {
+for ($i=0; $i < 8; $i++) {
 	if(isset($_POST[$i]) and $_POST[$i]==""){
 		$salvar = 'Não';	
 	}
@@ -13,7 +13,7 @@ for ($i=0; $i < 6; $i++) {
 
 
 
-for ($i=0; $i < 6; $i++) {
+for ($i=0; $i < 8; $i++) {
 	if(isset($_POST[$i]) and $_POST[$i]!=""){
 		$id_carac_itens = $_POST[$i];
 		$salvar = 'Sim';

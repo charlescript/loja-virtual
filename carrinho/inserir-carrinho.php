@@ -3,13 +3,17 @@
 
     @session_start();
 
-    $id_produto = $_POST['idproduto'];
-    $id_cliente = @$_SESSION['id_usuario'];
-    $combo = $_POST['combo'];
+    if(@$_SESSION['id_usuario'] != null) {
 
-    $pdo->query("INSERT INTO tb_carrinho(id_usuario, id_produto, quantidade, id_venda, data, combo) values('$id_cliente', '$id_produto', '1', '0', curDate(), '$combo' )");
+        $id_produto = $_POST['idproduto'];
+        $id_cliente = @$_SESSION['id_usuario'];
+        $combo = $_POST['combo'];
 
-    //echo $combo;
-    echo 'Cadastrado com Sucesso!!';
+        $pdo->query("INSERT INTO tb_carrinho(id_usuario, id_produto, quantidade, id_venda, data, combo) values('$id_cliente', '$id_produto', '1', '0', curDate(), '$combo' )");
+
+        //echo $combo;
+        echo 'Cadastrado com Sucesso!!';
+    } 
+
     
 ?>

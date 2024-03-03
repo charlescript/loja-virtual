@@ -25,8 +25,10 @@
                         <h5>Total: R$<span id="valor_total" class="ml-1"> </span></h5>
                     </div>
                     <div align="right" class="col-md-6 mb-4">
-                        <button type="button" id="btn-comprar" class="btn btn-info btn-sm" data-dismiss="modal">Comprar Mais</button>
-                        <button type="submit" name="btn-finalizar" id="btn-finalizar" class="btn btn-success btn-sm">Finalizar Compra</button>
+                        <?php if(@$_SESSION['id_usuario'] != null) { ?>
+                            <button type="button" id="btn-comprar" class="btn btn-info btn-sm" data-dismiss="modal">Comprar Mais</button>
+                            <button type="submit" name="btn-finalizar" id="btn-finalizar" class="btn btn-success btn-sm">Finalizar Compra</button>
+                        <?php } ?>
                     </div>
                 </div>
             </form>

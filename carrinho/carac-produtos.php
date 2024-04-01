@@ -49,8 +49,7 @@ for ($i = 0; $i < count($res2); $i++) {
 $query2 = $pdo->query("SELECT * FROM tb_carac_prod WHERE id_prod = '$id_produto'");
 $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
 for ($i = 0; $i < count($res2); $i++) {
-    foreach ($res2[$i] as $key => $value) {
-    }
+    foreach ($res2[$i] as $key => $value) { }
 
     $id_carac = $res2[$i]['id_carac'];
     $id_carac_prod = $res2[$i]['id'];
